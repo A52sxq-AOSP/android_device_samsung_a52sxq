@@ -44,3 +44,7 @@ $(call soong_config_set,surfaceflinger,udfps_lib,//hardware/samsung/fingerprint:
 
 # GameBar
 $(call inherit-product, packages/apps/GameBar/gamebar.mk)
+
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
