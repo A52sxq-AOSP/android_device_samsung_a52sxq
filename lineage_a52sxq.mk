@@ -37,8 +37,8 @@ TARGET_SCREEN_WIDTH := 1080
 # NFC
 TARGET_HAVE_SEC_NFC := true
 
-## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_a52sxq
+# Device identifier. This must come after all inclusions
+PRODUCT_NAME := lunaris_a52sxq
 PRODUCT_DEVICE := a52sxq
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-A528B
@@ -51,3 +51,16 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint="samsung/a52sxqxx/a52sxq:11/RP1A.200720.012/A528BXXUAGXK8:user/release-keys" \
     BuildDesc="a52sxqxx-user 11 RP1A.200720.012 A528BXXUAGXK8 release-keys"
+
+# Lunaris Flags
+LUNARIS_BUILD_TYPE := OFFICIAL
+WITH_GMS := true
+TARGET_CUSTOM_UDFPS := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_SUPPORTS_GOOGLE_FILES := true
+TARGET_INCLUDE_WEATHER := true
+WITH_BCR := true
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.paranoid.maintainer=Jiro
