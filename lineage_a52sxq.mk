@@ -27,6 +27,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+AVIUM_MAINTAINER := Jiro
+AVIUM_SETTINGS_SOC_MODEL_NAME := Qualcomm Snapdragon® 778G 5G
+AVIUM_SETTINGS_DEVICE_CODENAME := Galaxy A52s 5G
+AVIUM_IS_OFFICIAL := false
+WITH_GMS := true
+AVIUM_FORCE_SET_FAKE_PROP := true
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
