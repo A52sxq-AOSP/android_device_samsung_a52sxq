@@ -48,3 +48,7 @@ $(call inherit-product, packages/apps/GameBar/gamebar.mk)
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
+
+# Refreshrate
+$(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
+$(call soong_config_set,surfaceflinger,frame_rate_category_min,60)

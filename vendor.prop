@@ -5,3 +5,7 @@ bluetooth.device.default_name=Galaxy A52s 5G
 ro.vendor.fingerprint.type=udfps_optical
 ro.vendor.fingerprint.sensor_location=540|2137|100
 ro.vendor.fingerprint.request_touch_event=true
+
+# Perf
+persist.sys.perf.scroll_opt=true
+persist.sys.perf.scroll_opt.heavy_app=1
