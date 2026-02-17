@@ -42,6 +42,9 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set,samsungUdfpsVars,udfps_zorder,0x20000000u)
 $(call soong_config_set,surfaceflinger,udfps_lib,//hardware/samsung/fingerprint:libudfps_extension.samsung)
 
+# BCR
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
+
 # GameBar
 $(call inherit-product, packages/apps/GameBar/gamebar.mk)
 
