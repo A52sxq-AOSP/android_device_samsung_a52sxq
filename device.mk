@@ -58,3 +58,8 @@ PRODUCT_PACKAGES += \
 # Refreshrate
 $(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
 $(call soong_config_set,surfaceflinger,frame_rate_category_min,60)
+
+# Matlog
+ifeq ($(TARGET_BUILD_VARIANT),user)
+TARGET_DISABLE_MATLOG := true
+endif
