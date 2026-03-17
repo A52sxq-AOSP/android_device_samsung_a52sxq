@@ -57,40 +57,6 @@ on init
     chmod 0644 /dev/freezer/thaw/tasks
     chmod 0644 /dev/freezer/thaw/cgroup.procs
 
-# Create carrier folder for HiddenMenu
-on post-fs
-    mkdir /efs/carrier 0755 radio system
-
-on post-fs-data
-# MST/NFC Switch
-    chmod 0660 /dev/mst_ctrl
-
-on init
-# setup cgroup freezer for freecess
-    mkdir /dev/freezer
-    mount cgroup none /dev/freezer freezer
-    mkdir /dev/freezer/frozen
-    mkdir /dev/freezer/thaw
-    write /dev/freezer/frozen/freezer.state FROZEN
-    write /dev/freezer/thaw/freezer.state THAWED
-
-# MARs for freecess
-    chown system system /dev/freezer
-    chown system system /dev/freezer/frozen
-    chown system system /dev/freezer/frozen/tasks
-    chown system system /dev/freezer/frozen/cgroup.procs
-    chown system system /dev/freezer/frozen/freezer.state
-    chown system system /dev/freezer/thaw
-    chown system system /dev/freezer/thaw/tasks
-    chown system system /dev/freezer/thaw/cgroup.procs
-
-# MARs for freecess
-    chmod 0644 /dev/freezer/frozen/tasks
-    chmod 0644 /dev/freezer/frozen/cgroup.procs
-    chmod 0644 /dev/freezer/frozen/freezer.state
-    chmod 0644 /dev/freezer/thaw/tasks
-    chmod 0644 /dev/freezer/thaw/cgroup.procs
-
 # SDHMS Slowdown : Freezer
     mkdir /dev/freezer/abnormal
     write /dev/freezer/abnormal/freezer.state THAWED
@@ -101,6 +67,14 @@ on init
     chmod 0644 /dev/freezer/abnormal/tasks
     chmod 0644 /dev/freezer/abnormal/cgroup.procs
     chmod 0644 /dev/freezer/abnormal/freezer.state
+
+# Create carrier folder for HiddenMenu
+on post-fs
+    mkdir /efs/carrier 0755 radio system
+
+on post-fs-data
+# MST/NFC Switch
+    chmod 0660 /dev/mst_ctrl
 
 on boot
 # SDHMS Slowdown : Cpuset
