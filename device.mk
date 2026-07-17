@@ -55,6 +55,13 @@ $(call inherit-product, packages/apps/GameBar/gamebar.mk)
 PRODUCT_PACKAGES += \
     RemovePackages
 
+# Exclude BPF ringbuf programs (require kernel 5.8+, unsupported on SM7325 5.4)
+PRODUCT_PACKAGES := $(filter-out \
+    bpfRingbufProg.bpf \
+    bpfMemEvents.bpf \
+    bpfMemEventsTest.bpf \
+    , $(PRODUCT_PACKAGES))
+
 # Refreshrate
 $(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
 $(call soong_config_set,surfaceflinger,frame_rate_category_min,60)
